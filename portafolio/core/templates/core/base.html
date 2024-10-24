@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portafolio - {% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="stylesheet" href={% static 'core/css/bootstrap.min.css' %}>
+    <link rel="stylesheet" href={% static 'core/css/app.css' %}>
+  </head>
+  <body>
+<!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href={% url 'home'%}>Jhony Xajpot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href={% url 'home'%}>Inicio</a>
+                    <a class="nav-link" href={% url 'about-me'%}>Sobre mi</a>
+                    <a class="nav-link" href={% url 'portafolio'%}>Portafolio</a>
+                    <a class="nav-link" href={% url 'contact'%}>Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+  <!-- CABECERA -->
+    <div class="{% block img-fondo%} {% endblock%} imagen-fondo">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 titulos">
+                    <div>
+                        <h1 class="display-4 fw-bold">Jhony Xajpot</h1>
+                    </div>
+                    <div>
+                        <h3 class="fs-2">Desarrollador Web</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTENIDO -->
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 bg-light">
+        <div class="container">
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__redes">
+            <ul class="footer__lista">
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://github.com/" target="blank"><i class="fab fa-github-square fa-1x"></i></a>
+                </li>
+
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://www.linkedin.com/" target="blank"><i class="fab fa-linkedin-in fa-1x"></i></a>
+                </li>
+
+                <li class="footer__item">
+                    <a class="footer__icono" href="https://twitter.com/" target="blank"><i class="fab fa-twitter fa-1x"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer__texto">
+            <p>Jhony Xajpot &copy; Todos los Derechos Reservados - 2024</p>
+        </div>
+    </footer>
+    
+
+  </body>
+</html>
